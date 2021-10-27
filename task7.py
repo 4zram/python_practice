@@ -5,8 +5,9 @@ His number of guess will be displayed and he will be declared winner or looser a
 """
 a = 17
 count = 0
-while (True):
-    b = int(input("Enter your guess number:\n"))
+print("\t******Welcome to THE GUESS GAME*******\n")
+while (True):       # This is a never-ending loop
+    b = int(input("Guess the number:\n"))
     count = count + 1
     left = 10 - count
     if left>0:
@@ -16,7 +17,19 @@ while (True):
             print("Your number is smaller!\n",f"You have {left} guess left\n")
         elif b==17:
             print("Congrations! You won!\n",f"You took {count} guess\n")
-            break
+            again = input("Hit Y if you wish to try again!\n")
+            yes = again.upper()
+            if yes == "Y":
+                count = 0
+                continue
+            else:
+                break
     if left==0:
-        print("Sorry! You are out of guesses.")
-        break
+        print("Sorry! You are out of guesses.\n")
+        again = input("Hit Y if you wish to try again!\n")
+        yes = again.upper()
+        if yes == "Y":
+            count = 0
+            continue
+        else:
+            break
