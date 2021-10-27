@@ -6,13 +6,15 @@ print(c)
 
 # User function
 def fun():
+    """This is an introductory function"""      # This is called doc string. This is helpful to have the function description for long codes
     print("Hello you are in function")
 print(fun())    # This will print a 'NONE' which is an indication that the function didn't return anything.
+print(fun.__doc__)      # This is the method to print doc string.
 
 fun()   # This call the fun() and run it. easiest way to call a function.
 
 def use(i,j):
-    print("Addition of i and j is:", i+j)
+    # print("Addition of i and j is:", i+j)     # Commenting this so that it won't print twice.
     return(i+j)
 v = use(5, 8)   # Inputs can also be given to the functions
 print(v)    # Here, none is not printed since the function is returning some value which is 13 here.
