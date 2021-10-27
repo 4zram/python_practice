@@ -1,0 +1,4 @@
+Azram is awesome
+Azram is quick learner
+Azram has learned so many skills in such less time
+This file was created for File IO basics
