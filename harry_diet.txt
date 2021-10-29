@@ -1,1 +1,9 @@
-1. Oats2. Rajma rice bowl3. Lettucedone4. Fruits5. Suops6. Waterdone1. Salad
+
+[2021-10-28 23:04:38.838617]: 1. Oats
+[2021-10-28 23:05:28.329634]: 2. Banana Shake
+[2021-10-28 23:05:57.189081]: 3. Peanut Butter with Wheat bread
+[2021-10-28 23:05:58.284785]: done
+[2021-10-28 23:07:14.571276]: 1. Pancakes
+[2021-10-28 23:07:27.263095]: 2. Dates Shake
+[2021-10-28 23:07:38.962994]: 3. Lettuces
+[2021-10-28 23:07:40.118425]:  

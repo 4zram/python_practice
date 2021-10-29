@@ -1,5 +1,6 @@
 """
 Recursion means calling a function from within a function. This calling should break to avoid recursion error.
+Recursion makes code smaller but tough to debug while Iteration makes code longer but easy to trace issue.
 """
 
 # def hellow():
