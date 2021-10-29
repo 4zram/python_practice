@@ -40,16 +40,18 @@ def gun():
 
 while i>=0:
     take = input("S, W or G, Which one did you chose?\n")
-    if take == "S":
+    if take == "S" or "s":
         snake()
-    elif take == "W":
+    elif take == "W" or "w":
         water()
-    elif take == "G":
+    elif take == "G" or "g":
         gun()
     print(f"You have {i} chances!")
     i -= 1
 if ph>pm:
     print("Congratulations! You won.\n")
-else:
+elif pm>ph:
     print("\nBetter luck next time\n")
+else:
+    print("\nWoohoo!!! This was a draw")
 print(f"*****Game states:*****\n Computer won- {pm}\n You won - {ph}\n Draw - {draw}")
