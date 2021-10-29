@@ -8,10 +8,11 @@ print(c)
 def fun():
     """This is an introductory function"""      # This is called doc string. This is helpful to have the function description for long codes
     print("Hello you are in function")
+    return 0
 print(fun())    # This will print a 'NONE' which is an indication that the function didn't return anything.
 print(fun.__doc__)      # This is the method to print doc string.
 
-fun()   # This call the fun() and run it. easiest way to call a function.
+fun()   # This will call the fun() and run it. easiest way to call a function.
 
 def use(i,j):
     # print("Addition of i and j is:", i+j)     # Commenting this so that it won't print twice.
@@ -26,7 +27,9 @@ print(minus(4,2))
 # Understanding Lambda by using sort function
 def sor(a):
     return a[1]
+
 a = [[34,78], [54,28], [92,10]]
+
 a.sort(key=sor)
 print(a)
 
