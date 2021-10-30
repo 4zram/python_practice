@@ -35,3 +35,9 @@ print(a)
 
 a.sort(key = lambda x:x[1])     # Above example with lambda function.
 print(a)
+
+# Join function
+lis = ["London", "Paris", "New York", "France", "Germany", "Japan", "China"]
+a = " and ".join(lis)
+# a = " , ".join(lis)
+print(a)

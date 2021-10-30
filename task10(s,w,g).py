@@ -14,44 +14,53 @@ def snake():
     global ph, pm, draw
     if auto == "Snake":
         draw += 1
+        print("It's a draw\n")
     elif auto == "Water":
         ph += 1
+        print("You got 1 point\n")
     elif auto == "Gun":
         pm += 1
+        print("You lost 1 point\n")
     return 0
 def water():
     global ph, pm, draw
     if auto == "Snake":
         pm += 1
+        print("You lost 1 point\n")
     elif auto == "Water":
         draw += 1
+        print("It's a draw\n")
     elif auto == "Gun":
         ph += 1
+        print("You got 1 point\n")
     return 0
 def gun():
     global ph, pm, draw
     if auto == "Snake":
         ph += 1
+        print("You got 1 point\n")
     elif auto == "Water":
         pm += 1
+        print("You lost 1 point\n")
     elif auto == "Gun":
         draw += 1
+        print("It's a draw\n")
     return 0
 
 while i>=0:
     take = input("S, W or G, Which one did you chose?\n")
-    if take == "S" or "s":
+    if take.lower() == "s":
         snake()
-    elif take == "W" or "w":
+    elif take.lower() == "w":
         water()
-    elif take == "G" or "g":
+    elif take.lower() == "g":
         gun()
     print(f"You have {i} chances!")
     i -= 1
 if ph>pm:
-    print("Congratulations! You won.\n")
+    print("\nCongratulations! You won.\n")
 elif pm>ph:
     print("\nBetter luck next time\n")
 else:
-    print("\nWoohoo!!! This was a draw")
+    print("\nWoohoo!!! This was a draw\n")
 print(f"*****Game states:*****\n Computer won- {pm}\n You won - {ph}\n Draw - {draw}")
