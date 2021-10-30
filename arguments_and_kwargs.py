@@ -21,5 +21,8 @@ l = ["Azram", "Shifa", "Sahrish"]
 a = "Rajesh"    # We can pass a normal argument as we used to do.
 d = {"Azram":"Engineer", "Shifa":"Student", "Sahrish":"Struggling student"}
 
-func(a, *l)
-funct(a, *l, **d)
+print("Scope of this program is within ", __name__)
+# Above print will show the scope of the program, if it is in main or being imported somewhere.
+if __name__ == '__main__':
+    func(a, *l)
+    funct(a, *l, **d)
