@@ -56,12 +56,16 @@ def exercise():
 
 # Water consumption after every 30 min = 1800.0 sec
 schedule.every(10).seconds.do(water)
+print("hello")
+time.sleep(20)
 
 # Eye exercise after every 20 min = 1200.0 sec
 schedule.every(30).seconds.do(eyes)
+time.sleep(40)
 
 # Exercise after every 45 min = 2700.0 sec
 schedule.every(60).seconds.do(exercise)
+time.sleep(80)
 
 if __name__ == '__main__':
     while True:
