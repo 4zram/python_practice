@@ -18,9 +18,6 @@ def water():
     mixer.music.load("water.mp3")
     mixer.music.play()
 
-    # Water consumption after every 30 min = 1800.0 sec
-    schedule.every(1).minutes.do(water)
-
     query = input("Did you drink water? [y/n]\n")
     if query.lower() == 'y':
         with open("water log.txt", "a") as fil:
@@ -36,9 +33,6 @@ def eyes():
     mixer.music.load("eyes.mp3")
     mixer.music.play()
 
-    # Eye exercise after every 20 min = 1200.0 sec
-    schedule.every(1).minutes.do(eyes)
-
     query = input("Did you do eye exercise? [y/n]\n")
     if query.lower() == 'y':
         mixer.music.stop()
@@ -52,9 +46,6 @@ def exercise():
     mixer.music.load("exercise.mp3")
     mixer.music.play()
 
-    # Exercise after every 45 min = 2700.0 sec
-    schedule.every(1).minutes.do(exercise)
-
     query = input("Did you do exercise? [y/n]\n")
     if query.lower() == 'y':
         mixer.music.stop()
@@ -63,18 +54,30 @@ def exercise():
             mixer.music.stop()
             break
 
+# Water consumption after every 30 min = 1800.0 sec
+schedule.every(10).seconds.do(water)
+
+# Eye exercise after every 20 min = 1200.0 sec
+schedule.every(30).seconds.do(eyes)
+
+# Exercise after every 45 min = 2700.0 sec
+schedule.every(60).seconds.do(exercise)
+
 if __name__ == '__main__':
-    x = datetime.today()
-    a = 9
-    for a in range(9,17):
-        i = x.replace(hour=a)
-        j = x.replace(hour=9)
-        k = x.replace(hour=17)
-        while True:
+    while True:
+        a = 9
+        # print("in while loop\n")
+        for a in range(9,18):
+            print(f"in for loop {a}\n")
+            i = datetime.today()
+            j = i.replace(second=a)
+            print(i, "\n", j)
+            time.sleep(2)
             if i == j:
+                print("It is Time\n")
                 schedule.run_pending()
                 time.sleep(1)
-            elif i == k:
+            else:
                 schedule.cancel_job(water)
                 schedule.cancel_job(eyes)
                 schedule.cancel_job(exercise)

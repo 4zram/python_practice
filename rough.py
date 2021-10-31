@@ -1,15 +1,21 @@
-import schedule
 import time
+from pygame import mixer
+mixer.init()
 
-def job():
-    print("I'm working...")
+# schedule.every(3).seconds.do(water)
 
-schedule.every(1).seconds.do(job)
-schedule.every().hour.do(job)
-schedule.every().day.at("10:30").do(job)
-schedule.every().monday.do(job)
-schedule.every().wednesday.at("13:15").do(job)
-
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+if __name__ == '__main__':
+    while True:
+        # x = datetime.today()
+        # schedule.run_pending()
+        state = input("play(p)/pause(s)/exit(e)?")
+        time.sleep(1)
+        if state.lower() == 'p':
+            print("Loading test.mp3")
+            mixer.music.load("test.mp3")
+            mixer.music.play()
+        elif state.lower() == 's':
+            print("Music stopped!")
+            mixer.music.stop()
+        else:
+            break
