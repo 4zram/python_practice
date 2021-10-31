@@ -17,6 +17,10 @@ def water():
     """ To Log the time user consumed water and to keep playing mp3 unless user did not input yes. """
     mixer.music.load("water.mp3")
     mixer.music.play()
+
+    # Water consumption after every 30 min = 1800.0 sec
+    schedule.every(1).minutes.do(water)
+
     query = input("Did you drink water? [y/n]\n")
     if query.lower() == 'y':
         with open("water log.txt", "a") as fil:
@@ -26,10 +30,15 @@ def water():
         while query.lower() == 'y':
             mixer.music.stop()
             break
+
 def eyes():
     """ To play music unless user did not input yes """
     mixer.music.load("eyes.mp3")
     mixer.music.play()
+
+    # Eye exercise after every 20 min = 1200.0 sec
+    schedule.every(1).minutes.do(eyes)
+
     query = input("Did you do eye exercise? [y/n]\n")
     if query.lower() == 'y':
         mixer.music.stop()
@@ -37,10 +46,15 @@ def eyes():
         while query.lower() == 'y':
             mixer.music.stop()
             break
+
 def exercise():
     """ To play music unless user did not input yes """
     mixer.music.load("exercise.mp3")
     mixer.music.play()
+
+    # Exercise after every 45 min = 2700.0 sec
+    schedule.every(1).minutes.do(exercise)
+
     query = input("Did you do exercise? [y/n]\n")
     if query.lower() == 'y':
         mixer.music.stop()
@@ -56,16 +70,12 @@ if __name__ == '__main__':
         i = x.replace(hour=a)
         j = x.replace(hour=9)
         k = x.replace(hour=17)
-        if i == j:
-            schedule.every(1).minutes.do(water)
-            # Water consumption after every 30 min = 1800.0 sec
-            schedule.every(1).minutes.do(eyes)
-            # Eye exercise after every 20 min = 1200.0 sec
-            schedule.every(1).minutes.do(exercise)
-            # Exercise after every 45 min = 2700.0 sec
-            while True:
+        while True:
+            if i == j:
                 schedule.run_pending()
                 time.sleep(1)
-        elif i == k:
-            schedule.s
+            elif i == k:
+                schedule.cancel_job(water)
+                schedule.cancel_job(eyes)
+                schedule.cancel_job(exercise)
         a += 1

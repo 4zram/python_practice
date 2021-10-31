@@ -1,13 +1,15 @@
-from datetime import datetime
-from threading import Timer
-# import schedule
+import schedule
+import time
 
-x=datetime.today()
-y=x.replace(minute=41)
-if y==x:
-    print(x)
-    print("It is time")
-    print(y)
-else:
-    print(x)
-    print("The time has not reached")
+def job():
+    print("I'm working...")
+
+schedule.every(1).seconds.do(job)
+schedule.every().hour.do(job)
+schedule.every().day.at("10:30").do(job)
+schedule.every().monday.do(job)
+schedule.every().wednesday.at("13:15").do(job)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
