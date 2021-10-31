@@ -11,19 +11,20 @@ var3 = input("With these numbers, you can do add(+), sub(-), mul(*), div(/). Wha
 # var3.upper()
 
 if var3 == '+':
-    if var1==56 and var2==9:
-        print(f"{var1} + {var2} = 77") # 'f' is called formatted string and is used to treat var as variables and not strings
+    if var1 == 56 and var2 == 9:
+        print(
+            f"{var1} + {var2} = 77")  # 'f' is called formatted string and is used to treat var as variables and not strings
     else:
-        print(f"{var1} + {var2} = ", var1+var2)
-if var3=='-':
-    print(f"{var1} - {var2} = ", var1-var2)
-if var3=='*':
-    if var1==45 and var2==3:
+        print(f"{var1} + {var2} = ", var1 + var2)
+if var3 == '-':
+    print(f"{var1} - {var2} = ", var1 - var2)
+if var3 == '*':
+    if var1 == 45 and var2 == 3:
         print(f"{var1} * {var2} = 555", )
     else:
-        print(f"{var1} * {var2} = ", var1*var2)
-if var3=='/':
-    if var1==56 and var2==6:
+        print(f"{var1} * {var2} = ", var1 * var2)
+if var3 == '/':
+    if var1 == 56 and var2 == 6:
         print(f"{var1} / {var2} = 4", )
     else:
-        print(f"{var1} / {var2} = ", var1/var2)
+        print(f"{var1} / {var2} = ", var1 / var2)

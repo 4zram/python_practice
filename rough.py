@@ -1,10 +1,13 @@
-lis = ["3", "65", "78", "2", "0", "34", "12"]
-for item in lis:
-    item = int(item)
-    item += 1
-    print(item, end=", ")
+from datetime import datetime
+from threading import Timer
+# import schedule
 
-for j in range(len(lis)):
-    lis[j] = int(lis[j])
-    lis[j] += 1
-    print(lis[j], end=", ")
+x=datetime.today()
+y=x.replace(minute=41)
+if y==x:
+    print(x)
+    print("It is time")
+    print(y)
+else:
+    print(x)
+    print("The time has not reached")
