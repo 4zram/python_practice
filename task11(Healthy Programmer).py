@@ -59,16 +59,16 @@ def exercise():
             break
 
 # Water consumption after every 30 min = 1800.0 sec
-schedule.every(10).seconds.do(water)
+schedule.every(1).minutes.do(water)
 # print("hello")
 # time.sleep(20)
 
 # Eye exercise after every 20 min = 1200.0 sec
-schedule.every(30).seconds.do(eyes)
+schedule.every(2).minutes.do(eyes)
 # time.sleep(40)
 
 # Exercise after every 45 min = 2700.0 sec
-schedule.every(60).seconds.do(exercise)
+schedule.every(3).minutes.do(exercise)
 # time.sleep(80)
 
 if __name__ == '__main__':
@@ -78,11 +78,13 @@ if __name__ == '__main__':
         for a in range(9,18):
             print(f"in for loop {a}\n")
             i = datetime.today()
-            j = i.replace(second=a)
+            j = i.replace(minute=a)
             print(i, "\n", j)
             time.sleep(2)
+            c = 0
             while i == j:
-                print("It is Time\n")
+                print(f"It is Time {c}\n")
+                c += 1
                 schedule.run_pending()
                 time.sleep(1)
         a += 1
