@@ -81,10 +81,8 @@ if __name__ == '__main__':
             j = i.replace(minute=a)
             print(i, "\n", j)
             time.sleep(2)
-            c = 0
             while i == j:
-                print(f"It is Time {c}\n")
-                c += 1
+                print(f"It is Time {i}\n")
                 schedule.run_pending()
                 time.sleep(1)
         a += 1
