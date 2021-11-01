@@ -8,11 +8,12 @@ The music should continue to play until he hit done.
 To play music, we would need to use pygame module.
 """
 import time
-import schedule
-from datetime import datetime
-from pygame import mixer
+import schedule # For scheduling time intervals
+from datetime import datetime   # For dealing with current time
+from pygame import mixer    # For dealing with music
 mixer.init()
 
+# Water intake
 def water():
     """ To Log the time user consumed water and to keep playing mp3 unless user did not input yes. """
     mixer.music.load("water.mp3")
@@ -20,6 +21,7 @@ def water():
 
     query = input("Did you drink water? [y/n]\n")
     if query.lower() == 'y':
+        # Creating a log for water consumption time
         with open("water log.txt", "a") as fil:
             fil.write("["+str(datetime.now())+"] :"+"You drank water\n")
         mixer.music.stop()
@@ -28,6 +30,7 @@ def water():
             mixer.music.stop()
             break
 
+# Eyes exercise
 def eyes():
     """ To play music unless user did not input yes """
     mixer.music.load("eyes.mp3")
@@ -41,6 +44,7 @@ def eyes():
             mixer.music.stop()
             break
 
+# Physical exercise
 def exercise():
     """ To play music unless user did not input yes """
     mixer.music.load("exercise.mp3")
@@ -56,16 +60,16 @@ def exercise():
 
 # Water consumption after every 30 min = 1800.0 sec
 schedule.every(10).seconds.do(water)
-print("hello")
-time.sleep(20)
+# print("hello")
+# time.sleep(20)
 
 # Eye exercise after every 20 min = 1200.0 sec
 schedule.every(30).seconds.do(eyes)
-time.sleep(40)
+# time.sleep(40)
 
 # Exercise after every 45 min = 2700.0 sec
 schedule.every(60).seconds.do(exercise)
-time.sleep(80)
+# time.sleep(80)
 
 if __name__ == '__main__':
     while True:
@@ -77,12 +81,8 @@ if __name__ == '__main__':
             j = i.replace(second=a)
             print(i, "\n", j)
             time.sleep(2)
-            if i == j:
+            while i == j:
                 print("It is Time\n")
                 schedule.run_pending()
                 time.sleep(1)
-            else:
-                schedule.cancel_job(water)
-                schedule.cancel_job(eyes)
-                schedule.cancel_job(exercise)
         a += 1
