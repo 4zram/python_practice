@@ -1,4 +1,9 @@
-
+"""
+Class within a class is called inheritance. In this example, the 'Programmer' class is the child for the 'Employee' class.
+Programmer class has the access to all the resources of the parent class and has it's own modifications or additional resources.
+In the example here, parent class was Employee which contains the details of all the employees and child was Programmer class which
+contains additional details for all the programmer amongst the employees.
+"""
 class Employee:
     project = "Target"
     leaves = 9
