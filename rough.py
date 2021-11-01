@@ -1,21 +1,14 @@
-import time
-from pygame import mixer
-mixer.init()
+class Employee:
+    num_leaves = 8
+    project = "Target"
+    manager = "Satish Nadig"
 
-# schedule.every(3).seconds.do(water)
+print("Employee's common details", Employee.__dict__)
 
-if __name__ == '__main__':
-    while True:
-        # x = datetime.today()
-        # schedule.run_pending()
-        state = input("play(p)/pause(s)/exit(e)?")
-        time.sleep(1)
-        if state.lower() == 'p':
-            print("Loading test.mp3")
-            mixer.music.load("test.mp3")
-            mixer.music.play()
-        elif state.lower() == 's':
-            print("Music stopped!")
-            mixer.music.stop()
-        else:
-            break
+def __init__(self, x, y, z):
+    self.name = x
+    self.salary = y
+    self.experience = z
+
+harry = Employee("Rohan", 45000, "4 Years")
+print(harry.salary)
