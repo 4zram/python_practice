@@ -1,6 +1,12 @@
 """
 Multiple inheritance is done when one class is derived from multiple class. This is very similar to Single inheritance but here the child
 inherits the features of both the parent class.
+Order of parent class call in child method should be attended with great attention. Whichever is written first will be called for its resources first.
+So if Employee is written first, the program will run according to the resources of the Employee class and then Player class.
+
+Multi-Inheritance has 2 class level BASE AND DERIVED class levels.
+
+Multiple inheritance causes diamond problems which most programming languages could not solve. Hence, it's recommended to avoid multiple inheritance.
 """
 # Parent class 1
 class Employee:
@@ -51,7 +57,7 @@ class Player:
         print(f"{self.name} plays {self.game} games")
 
 # Child class 2
-class Programmer(Employee, Player):
+class Programmer(Employee, Player):     # The order of parent class here should be taken in great consideration.
     leaves = 8
     wfh = 6
 

@@ -1,48 +1,23 @@
 
-class Student:
-    tmarks = 100
-    subjects = 5
+class A:
+    classvar1 = "I am a class variable in class A"
+    def __init__(self):
+        self.var1 = "I am inside class A's constructor"
+        self.classvar1 = "Instance var in class A"
+        self.special = "Special"
 
-    # Constructor
-    def __init__(self, name, std):
-        self.name = name
-        self.std = std
+class B(A):
+    classvar1 = "I am in class B"
 
-    # Print method
-    def prints(self):
-        return f"{self.name} of class {self.std}"
+    def __init__(self):
+        super().__init__()
+        self.var1 = "I am inside class B's constructor"
+        self.classvar1 = "Instance var in class B"
 
-    #Edit class variable methods
-    def edits(self, new_tmarks, new_subjects):
-        self.tmarks = new_tmarks
-        self.subjects = new_subjects
+        # print(super().classvar1)
 
-    # Class stitched prints
-    @classmethod
-    def plain(cls):
-        print("This is just a plain printing.")
 
-    @classmethod
-    def cuts(cls, string):
-        return cls(*string.split())
+a = A()
+b = B()
 
-class Topper(Student):
-    avg = 90
-    attendance = 97
-
-    # Constructor
-    def __init__(self, name, std, score):
-        self.name = name
-        self.std = std
-        self.score = score
-
-    # Printing Method
-    def pri(self):
-        return f"{self.name} of class {self.std} has scored {self.score} marks and made us all proud."
-
-deepak = Student.cuts("Deepak 10")
-azram = Topper.cuts("Azram 10 97")
-print(Student.prints(deepak))
-Student.plain()
-print(Topper.avg)
-print(Topper.pri(azram))
+print(b.special, b.var1, b.classvar1)
