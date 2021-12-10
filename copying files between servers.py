@@ -20,6 +20,7 @@ print(sftp_client.getcwd())
 # To check the current pointing path location
 sftp_client.get('demo.txt','C:\\Users\\Azi\\Desktop\\downloaded_file.txt')
 # To get the file from remote server to local server. If the transfer is between windows and linux, make sure to use "\\" defining the path.
+# sftp_client.get('source','destination')
 sftp_client.put("transfer_files.py",'/home/ec2-user/transfer_files.py')
 # To put the file from local server to remote server.
 
