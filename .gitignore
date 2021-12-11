@@ -1,3 +1,4 @@
 *.mp3
 water log.txt
 __pycache__/
+/.idea/
