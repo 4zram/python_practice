@@ -3,16 +3,15 @@ Constructors assign values to the variables and data-members of the class upon o
 They are defined within the class.
 Constructors are of two types:
 1. Default (which is shown here)
+    def __init__(self):
+        # body of the constructor
 2. Parameterised (which is declared with parameters as shown in the running code below)
-def __init__(self):
-    # body of the constructor
-
 Method has 'self' parameter which maps to the instances of the current class
 """
 class Employee:
     print("In the class")
     no_of_leaves = 8    #This is an attribute of Employee class
-    # This is a constructor
+    # This is a parameterised constructor
     def __init__(self, aname, asalary, arole):
         print("In the constructor")
         self.name = aname
