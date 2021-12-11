@@ -25,7 +25,7 @@ k.close()
 l = open("azram.txt")
 c = l.read(3)
 print(c)
-c = l.read(3) # The number of times we print this, the number of characters next 3 characters it will read.
+c = l.read(3) # The number of times we print this, the number of next 3 characters it will read.
 print(c)
 l.close()
 
