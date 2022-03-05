@@ -1,6 +1,7 @@
 """
 Arguments here are used to make the program scalable. By following this, we can alter the arguments that
 was supposed to be passed through function.
+*args = non-keyword arguments; **kwargs = keyword arguments
 The format for this is func(normal, *args, **kwarks)
 if you flip any of those positions, it will throw error
 """
