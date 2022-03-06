@@ -38,7 +38,7 @@ l.close()
 
 # Printing line by line
 m = open("azram.txt")
-# a = j.read()      # If we read then the file pointer will be empty and nothing will be printed.
+# a = m.read()      # If we read then the file pointer will be empty and nothing will be printed.
 for line in m:      # line itself has \n so its printing new line everytime. To be clear, its not the print that's doing it.
     print(line, end="")
 m.close()
