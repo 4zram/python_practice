@@ -38,7 +38,7 @@ def dec1(func1):
         print("Executing Now")
         func1()
         print("Func1 executed")
-    return nowexec()
+    return nowexec
 @dec1
 def who_is_harry():
     print("Who is Harry")
